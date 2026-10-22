@@ -1,0 +1,172 @@
+@charset "UTF-8";
+
+/* ==========================================
+   1. [최종 진화] 창 크기에 따라 유연하게 변하는 반응형 여백 정의
+   ========================================== */
+body {
+    font-family: 'Pretendard', sans-serif;
+    background-color: #f4f7fa;
+    margin: 0; padding: 0;
+    color: #334155;
+    min-width: 1200px !important; 
+    overflow-x: auto !important;
+}
+
+.detail-container { 
+    width: 850px; 
+    /* 🌟 [반응형 황금 마법]
+       - 창이 작아지면: 최소 68px까지 바짝 올라붙어 답답함을 없앱니다. (헤더 65px + 3px 여유)
+       - 전체 화면이 되면: 화면 높이 비율(vmax)에 맞춰 여백이 늘어나면서 시각적 안정감을 줍니다. */
+    margin: calc(65px + 1.2vmax) auto 40px auto !important; 
+    padding: 35px; 
+    background: #ffffff; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06); 
+    box-sizing: border-box !important;
+}
+
+.detail-header-row { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 25px; border-bottom: 2px solid #6366f1; padding-bottom: 15px; }
+.detail-title { font-size: 26px; font-weight: 800; color: #1e293b; margin: 0; }
+
+/* ==========================================
+   2. 상단 네비게이션 헤더바 스킨 동기화 (main.jsp 와 100% 일치)
+   ========================================== */
+.header {
+    background-color: #0f172a; 
+    height: 65px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    position: fixed !important; 
+    top: 0 !important; 
+    left: 0 !important;
+    z-index: 1000 !important; 
+    width: 100% !important;
+    min-width: 1200px !important; 
+    box-sizing: border-box !important;
+}
+
+.header-inner {
+    max-width: 1200px;
+    width: 100% !important;
+    min-width: 1200px !important; 
+    margin: 0 auto !important; 
+    height: 100% !important;
+    display: flex !important; 
+    justify-content: space-between !important; 
+    align-items: center !important;
+    padding: 0 20px !important; 
+    box-sizing: border-box !important;
+}
+
+.logo-area { text-decoration: none; display: flex !important; align-items: center !important; font-size: 24px !important; flex-shrink: 0 !important; }
+.logo-group { color: #ffffff; font-weight: 800; }
+.logo-ware { color: #e2b857; font-weight: 300; margin-left: 1px; }
+
+.nav-buttons { display: flex !important; align-items: center !important; gap: 8px !important; flex-wrap: nowrap !important; flex-shrink: 0 !important; }
+.user-profile-info { margin-right: 15px !important; font-size: 14px !important; color: #94a3b8; flex-shrink: 0 !important; }
+
+.admin-tag { 
+    background: rgba(226, 184, 87, 0.15); 
+    color: #e2b857; 
+    border: 1px solid #e2b857; 
+    padding: 2px 8px !important; 
+    border-radius: 4px; 
+    font-size: 11px !important; 
+    font-weight: 800; 
+    margin-right: 6px !important; 
+    flex-shrink: 0 !important; 
+}
+
+.nav-btn { 
+    padding: 8px 14px !important; 
+    color: #cbd5e1; 
+    text-decoration: none; 
+    border-radius: 6px; 
+    font-weight: 600; 
+    font-size: 13px !important; 
+    transition: 0.3s; 
+    white-space: nowrap !important; 
+    flex-shrink: 0 !important; 
+}
+.nav-btn:hover { color: #ffffff; background: rgba(255,255,255,0.08); }
+
+.nav-btn.admin-special { color: #e2b857 !important; border: 1px solid rgba(226, 184, 87, 0.5) !important; background: rgba(226, 184, 87, 0.05) !important; }
+.nav-btn.admin-special:hover { background: rgba(226, 184, 87, 0.2) !important; box-shadow: 0 0 10px rgba(226, 184, 87, 0.3) !important; }
+
+.nav-btn.logout { background: #be123c; color: #fff !important; margin-left: 10px !important; }
+.nav-btn.logout:hover { background: #e11d48; }
+
+/* ==========================================
+   3. 5단계 결재선 디자인 (보존)
+   ========================================== */
+.approval-container { display: flex; justify-content: flex-end; gap: 12px; margin-bottom: 35px; }
+.stamp-box { display: flex !important; flex-direction: column !important; width: 100px !important; min-width: 100px !important; max-width: 100px !important; border: 1px solid #cbd5e1 !important; text-align: center !important; border-radius: 6px !important; background: #ffffff !important; box-sizing: border-box !important; overflow: hidden !important; }
+.stamp-box.active-turn { border: 2px solid #6366f1 !important; transform: scale(1.03); box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15); }
+.stamp-step { display: block !important; width: 100% !important; background: #f1f5f9 !important; padding: 6px 0 !important; font-size: 12px !important; font-weight: 700 !important; color: #475569 !important; border-bottom: 1px solid #cbd5e1 !important; margin: 0 !important; box-sizing: border-box !important; }
+.stamp-box.active-turn .stamp-step { background: #6366f1 !important; color: #ffffff !important; }
+.stamp-name { display: block !important; width: 100% !important; padding: 18px 0 !important; font-size: 14px !important; font-weight: 800 !important; color: #0f172a !important; min-height: 22px !important; box-sizing: border-box !important; margin: 0 !important; background: #ffffff !important; text-align: center !important; flex-grow: 1 !important; }
+.stamp-name.signed { color: #4f46e5 !important; position: relative !important; }
+.stamp-name.signed::after { content: '(印)' !important; font-size: 11px !important; color: #ef4444 !important; margin-left: 3px !important; vertical-align: middle !important; font-weight: bold !important; display: inline-block !important; }
+.stamp-name.rejected, .stamp-name[style*="color: rgb(239, 68, 68)"], .stamp-name[style*="color: #ef4444"] { color: #ef4444 !important; font-weight: 800 !important; }
+.stamp-date { display: block !important; width: 100% !important; font-size: 11px !important; color: #64748b !important; padding: 6px 0 !important; background: #fafafa !important; border-top: 1px dashed #e2e8f0 !important; margin: 0 !important; box-sizing: border-box !important; text-align: center !important; }
+
+/* ==========================================
+   4. 📌 [최종 해결] 문서 상세 테이블 스펙 및 대여 사유 강제 교정
+   ========================================== */
+.detail-container table.info-table { 
+    width: 100% !important; 
+    border-collapse: collapse !important; 
+    margin-bottom: 35px !important; 
+    table-layout: fixed !important; /* 무조건 고정 틀 작동 */
+}
+
+/* 모든 셀의 공통 디자인 */
+.detail-container table.info-table th {
+    background: #f8fafc !important; 
+    padding: 14px !important; 
+    border: 1px solid #e2e8f0 !important; 
+    text-align: left !important; 
+    color: #334155 !important; 
+    font-weight: 700 !important; 
+    font-size: 14px !important; 
+}
+
+.detail-container table.info-table td {
+    padding: 14px !important; 
+    border: 1px solid #e2e8f0 !important; 
+    color: #475569 !important; 
+    font-size: 14px !important; 
+    word-break: break-all !important; 
+    text-align: left !important;
+}
+
+/* 🌟 [기존의 찌그러트리던 원인 제거 및 재정의] 
+   일반적인 4칸짜리 줄(tr)에만 너비 규칙을 적용하여 간섭을 배제합니다. */
+.detail-container table.info-table tr th { width: 20% !important; }
+.detail-container table.info-table tr td { width: 30% !important; }
+
+/* 🌟 [초강력 우주방어 가드] 
+   대여 사유 칸처럼 colspan이 박힌 td는 위의 'width: 30%' 규칙을 완전히 찢어발기고 
+   남은 우측 공간을 100% 다 할당받도록 브라우저의 연산 순위를 최상위로 끌어올립니다. */
+.detail-container table.info-table tr td[colspan="3"],
+.detail-container table.info-table tr td[colspan] {
+    width: auto !important; /* fixed 레이아웃에서 colspan이 자연스럽게 확장되도록 유도 */
+    display: table-cell !important; /* 간혹 발생할 수 있는 display 붕괴 방지 */
+}
+
+.emphasize-text { color: #6366f1; font-weight: 700; }
+
+/* ==========================================
+   5. 결재 상태 배지 및 하단 버튼 조작 영역 (보존)
+   ========================================== */
+.status-badge { padding: 6px 14px !important; border-radius: 20px !important; font-size: 13px !important; font-weight: 800 !important; display: inline-block !important; text-align: center !important; box-shadow: 0 1px 2px rgba(0,0,0,0.05) !important; }
+.status-wait { background: #e0e7ff !important; color: #4f46e5 !important; border: 1px solid #c7d2fe !important; }
+.status-active { background: #dcfce7 !important; color: #16a34a !important; border: 1px solid #bbf7d0 !important; }
+.status-reject { background: #fee2e2 !important; color: #dc2626 !important; border: 1px solid #fecaca !important; }
+.status-finish { background: #f1f5f9 !important; color: #475569 !important; border: 1px solid #e5e7eb !important; }
+
+.btn-group { display: flex; justify-content: center; align-items: center; gap: 15px; border-top: 1px solid #e2e8f0; padding-top: 25px; width: 100%; }
+.btn { padding: 12px 28px; font-size: 15px; font-weight: 700; border: none; border-radius: 6px; cursor: pointer; transition: all 0.2s; text-decoration: none; text-align: center; }
+.btn-back { background: #64748b; color: #ffffff; }
+.btn-approve { background: #22c55e; color: #ffffff; }
+.btn-reject { background: #ef4444; color: #ffffff; }
+.btn:hover { opacity: 0.9; transform: translateY(-1px); }

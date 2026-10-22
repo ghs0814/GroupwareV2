@@ -1,0 +1,372 @@
+@charset "UTF-8";
+
+/* ==========================================
+   0. 전체 레이아웃 및 카드 통일 (스크린샷 기반 추가)
+   ========================================== */
+body {
+    background-color: #f4f7fa !important;
+}
+
+/* 대시보드 컨테이너 내부 여백 조절로 정렬 맞춤 */
+.dashboard-container {
+    max-width: 1160px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+}
+
+/* 재고 관리 페이지처럼 테이블을 깔끔한 흰색 카드로 감싸는 스타일 */
+.table-wrapper {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02) !important;
+    overflow-x: auto !important; 
+    overflow-y: hidden !important;
+    margin-top: 15px !important;
+    width: 100% !important;
+}
+
+/* 💡 [테이블 뼈대 교정]: fixed에서 auto로 변경하여 텍스트 길이에 맞춰 너비 조절 */
+.table-wrapper table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin: 0 !important;
+    table-layout: auto !important; 
+}
+
+/* 헤더 스타일 */
+.table-wrapper table th {
+    background-color: #f8fafc !important;
+    padding: 14px 12px !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+}
+
+/* 💡 핵심 수정: 고정 패딩을 줄이고 최소 높이를 설정하여 배지 유무에 따라 유동적으로 반응 */
+.table-wrapper table td {
+    padding: 10px 12px !important;       
+    font-size: 14px !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    color: #334155 !important;
+    border-bottom: 1px solid #f1f5f9 !important;
+    line-height: 1.2 !important;        /* 텍스트 줄 높이 타이트하게 조정 */
+}
+
+/* 💡 [마우스 호버]: 재고관리 페이지처럼 마우스 올렸을 때 로우 전체 하이라이트 */
+.table-wrapper table tbody tr:hover {
+    background-color: #fcfcfd !important;
+}
+
+/* 데이터가 없을 때의 카드 내부 레이아웃 */
+.empty-data {
+    padding: 40px 0 !important;
+    color: #94a3b8 !important;
+    font-weight: 500 !important;
+    text-align: center !important;
+}
+
+
+/* ==========================================
+   3. 기안 문서함용 탭 메뉴 스타일
+   ========================================== */
+.tab-menu-container {
+    display: flex;
+    gap: 8px;                  
+    margin: 15px 0 8px 0 !important;      
+    border-bottom: 2px solid #e2e8f0;
+    padding: 0;          
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.tab-menu-container button, 
+.tab-btn {
+    padding: 10px 20px !important; 
+    font-size: 14px !important;
+    font-weight: 700 !important;   
+    color: #64748b !important;     
+    background: #f1f5f9 !important; 
+    border: 1px solid #e2e8f0 !important;
+    border-bottom: none !important; 
+    border-top-left-radius: 6px !important;  
+    border-top-right-radius: 6px !important;
+    cursor: pointer;
+    position: relative;
+    bottom: -2px;                  
+    transition: none !important;   
+}
+
+.tab-menu-container button:hover, .tab-btn:hover { color: #6366f1 !important; background: #f8fafc !important; }
+.tab-menu-container button.active, .tab-btn.active {
+    color: #6366f1 !important;     
+    background: #ffffff !important; 
+    border-color: #e2e8f0 !important;
+    border-bottom: 3px solid #6366f1 !important; 
+    font-weight: 800 !important;
+}
+
+/* ==========================================
+   4. 통합 검색바 수직 핏 동기화
+   ========================================== */
+.search-bar-container {
+    max-width: 1160px !important; 
+    width: 100% !important;
+    min-width: 1160px !important; 
+    padding: 12px 0 16px 0 !important;       
+    margin: 0 auto !important; 
+    box-sizing: border-box !important;
+    
+    position: sticky !important; 
+    top: 65px !important; 
+    z-index: 999 !important;   
+    background-color: #f4f7fa !important; 
+}
+
+.search-bar-container::before {
+    content: "" !important;
+    position: absolute !important;
+    top: -12px !important;     
+    left: 0 !important;
+    width: 100% !important;
+    height: 100px !important;   
+    background-color: #f4f7fa !important; 
+    z-index: -1 !important;
+}
+
+.search-form {
+    display: flex;
+    gap: 10px;
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.06) !important; 
+    align-items: center;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.search-select {
+    width: 130px;
+    min-width: 130px;
+    height: 42px;
+    padding: 0 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #475569;
+    outline: none;
+    background-color: #fff;
+    cursor: pointer;
+    flex-shrink: 0 !important;
+}
+
+.search-input {
+    flex-grow: 1;
+    min-width: 300px;
+    height: 42px;
+    padding: 0 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s;
+}
+.search-input:focus { border-color: #6366f1; }
+
+.btn-search {
+    width: 100px;
+    min-width: 100px;
+    height: 42px;
+    background-color: #6366f1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.2s;
+    flex-shrink: 0 !important;
+}
+.btn-search:hover { background-color: #4f46e5; }
+
+/* ==========================================
+   6. [정밀 고정 비율 분배 - 탭별 완전 분리]
+   ========================================== */
+.eq-table tr th:nth-child(1), .eq-table tr td:nth-child(1) { width: 10% !important; } 
+.eq-table tr th:nth-child(2), .eq-table tr td:nth-child(2) { width: auto !important; min-width: 33% !important; } 
+.eq-table tr th:nth-child(3), .eq-table tr td:nth-child(3) { width: 14% !important; } 
+.eq-table tr th:nth-child(4), .eq-table tr td:nth-child(4) { width: 10% !important; } 
+.eq-table tr th:nth-child(5), .eq-table tr td:nth-child(5) { width: 21% !important; } 
+.eq-table tr th:nth-child(6), .eq-table tr td:nth-child(6) { width: 12% !important; } 
+
+#tab-leave table tr th:nth-child(1), #tab-leave table tr td:nth-child(1) { width: 10% !important; } 
+#tab-leave table tr th:nth-child(2), #tab-leave table tr td:nth-child(2) { width: 25% !important; } 
+#tab-leave table tr th:nth-child(3), #tab-leave table tr td:nth-child(3) { width: 10% !important; } 
+#tab-leave table tr th:nth-child(4), #tab-leave table tr td:nth-child(4) { width: 40% !important; } 
+#tab-leave table tr th:nth-child(5), #tab-leave table tr td:nth-child(5) { width: 15% !important; } 
+
+
+/* ==========================================
+   7. 검색 하이라이트, 제목 링크 및 수량/배지 가독성 스타일
+   ========================================== */
+.mark-highlight {
+    background-color: #fef08a !important; 
+    color: #000000 !important;
+    font-weight: bold !important;
+    padding: 2px 4px !important;
+    border-radius: 4px !important;
+    box-shadow: 0 0 4px rgba(234, 179, 8, 0.4) !important;
+    display: inline-block !important;
+    position: relative;
+    z-index: 10;
+    animation: pulse 0.8s infinite alternate ease-in-out !important; 
+}
+
+/* 💡 [결재 바랍니다] 배지가 있는 행은 이 클래스에 의해 자연스럽게 높이가 확장됨 */
+.approval-blink {
+    color: #dc2626 !important;
+    background-color: #ffffff !important;
+    font-weight: 800 !important;
+    font-size: 11px !important;
+    display: block !important;          /* 블록으로 변경하여 배지 높이만큼 행을 밀어냄 */
+    width: max-content !important;
+    margin: 4px auto 0 auto !important; /* 배지 위쪽 간격만 살짝 추가 */
+    border: 1px solid #fecaca !important;
+    padding: 2px 6px !important;
+    border-radius: 4px !important;
+    animation: pulseBlink 0.9s infinite alternate ease-in-out !important; 
+}
+
+/* '승인대기' 상태 배지 뒤에 '결재 바랍니다'가 나올 때 자연스럽게 아래로 떨어뜨려 주는 가상 안전장치 */
+.table-wrapper table td .status-badge + .approval-blink {
+    display: block !important;
+    margin: 4px auto 0 auto !important;
+}
+
+@keyframes pulseBlink {
+    from {
+        transform: scale(0.98);
+        opacity: 0.75;
+        box-shadow: 0 1px 2px rgba(220, 38, 38, 0.05);
+    }
+    to {
+        transform: scale(1.02);
+        opacity: 1;
+        box-shadow: 0 2px 6px rgba(220, 38, 38, 0.15); 
+    }
+}
+
+/* ==========================================
+   7. 검색 하이라이트, 제목 링크 및 수량/배지 가독성 스타일
+   ========================================== */
+
+/* 💡 [1단계: 부모 td 셀 교정] 
+   기안제목이 들어가는 td 셀 내부의 모든 정렬 기준을 가로/세로 정중앙으로 통일합니다. */
+.table-wrapper table td.td-title,
+#tab-leave table tr td:nth-child(4) {
+    display: table-cell !important;      /* 테이블 기본 성질 고정 */
+    vertical-align: middle !important;   /* 수직(상하) 중앙 정렬 */
+    text-align: center !important;       /* 💡 [추가] 가로(좌우) 중앙 정렬 */
+    padding: 0 !important;               /* 불균형한 여백 원천 차단 */
+}
+
+/* [기안 제목 스타일] - 박스 정렬 버리고 텍스트 정렬로 변경 */
+.tab-content table td a.title-link {
+    display: inline !important;           /* 박스 강제성을 버림 */
+    color: #6366f1 !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;       /* 가로 정렬 방해 방지 */
+    line-height: 1.5 !important;          /* 배지 때문에 늘어난 칸 높이에 맞춰 자연스럽게 반응 */
+}
+
+/* 🛠️ [마우스 올렸을 때 - 호버 효과 추가] */
+.tab-content table td a.title-link:hover {
+    color: #0284c7 !important;           
+    text-decoration: underline !important; 
+}
+
+.td-qty .qty-wrap {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.5px;
+}
+.td-qty .qty-wrap b {
+    display: inline !important;
+    float: none !important;
+}
+
+/* [상태 배지] */
+.status-badge {
+    display: inline-block !important;
+    padding: 2px 8px !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    border-radius: 4px !important;
+}
+.status-blue { background-color: #e0e7ff !important; color: #4338ca !important; border: 1px solid #c7d2fe !important; }
+.status-red { background-color: #fee2e2 !important; color: #b91c1c !important; border: 1px solid #fecaca !important; }
+.status-gray { background-color: #f3f4f6 !important; color: #4b5563 !important; border: 1px solid #e5e7eb !important; }
+
+/* ==========================================
+   8. 페이징 네비게이션 스타일 (강력한 스타일 적용)
+   ========================================== */
+.pagination-container {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 5px !important;
+    margin: 30px 0 50px 0 !important;
+    width: 100% !important;
+}
+
+.pagination {
+    display: flex !important;
+    gap: 6px !important;
+}
+
+/* 기존 page-link 클래스에 대한 디자인 강화 */
+.page-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 34px !important;
+    height: 34px !important;
+    padding: 0 10px !important;
+    border-radius: 8px !important;
+    background-color: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    color: #475569 !important;
+    text-decoration: none !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease !important;
+    cursor: pointer !important;
+}
+
+.page-link:hover {
+    border-color: #6366f1 !important;
+    color: #6366f1 !important;
+    background-color: #f8fafc !important;
+    transform: translateY(-1px) !important;
+}
+
+.page-link.active {
+    background-color: #6366f1 !important;
+    color: #ffffff !important;
+    border-color: #6366f1 !important;
+    box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.4) !important;
+    cursor: default !important;
+}
+
+.page-link.active:hover {
+    background-color: #6366f1 !important;
+    color: #ffffff !important;
+    transform: none !important;
+}

@@ -1,0 +1,226 @@
+/* Address Book Specific Styles - List Version */
+.address-book-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0;
+}
+
+/* Search Area */
+.search-header {
+    background: #ffffff;
+    padding: 25px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #e2e8f0;
+}
+
+.search-title h2 {
+    font-size: 22px;
+    color: #1e293b;
+    margin-bottom: 4px;
+}
+
+.search-title p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.search-box {
+    position: relative;
+    width: 320px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px 16px 10px 40px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.search-box input:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.search-box i {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+/* List Layout */
+.employee-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.employee-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    position: relative;
+}
+
+.employee-card:hover {
+    transform: translateX(5px);
+    border-color: #6366f1;
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.08);
+}
+
+/* Info Area Layout (Horizontal) */
+.emp-main-info {
+    display: flex;
+    align-items: center;
+    width: 350px; /* 고정 너비로 정렬 유지 */
+    gap: 20px;
+}
+
+.emp-no-badge {
+    font-size: 13px;
+    font-weight: 700;
+    color: #64748b;
+    background: #f1f5f9;
+    padding: 4px 10px;
+    border-radius: 6px;
+    min-width: 85px;
+    text-align: center;
+}
+
+.emp-name-area {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.emp-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.admin-badge {
+    background: #fef3c7;
+    color: #d97706;
+    font-size: 10px;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-weight: 800;
+}
+
+.emp-position-dept {
+    font-size: 13px;
+    color: #6366f1;
+    font-weight: 600;
+}
+
+.emp-position-dept span.dept {
+    color: #94a3b8;
+    margin-left: 8px;
+    font-weight: 500;
+}
+
+/* Detail Area Layout (Horizontal) */
+.emp-details {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-grow: 1;
+    margin-left: 40px;
+    border-left: 1px solid #f1f5f9;
+    padding-left: 40px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: #64748b;
+}
+
+.detail-item i {
+    width: 16px;
+    color: #cbd5e1;
+    font-size: 16px;
+}
+
+.detail-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #94a3b8;
+    margin-bottom: 2px;
+    display: block;
+}
+
+.detail-value {
+    color: #334155;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Pagination Styles */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 40px;
+}
+
+.page-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 36px;
+    padding: 0 12px;
+    border-radius: 8px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.page-link:hover {
+    background: #f8fafc;
+    border-color: #6366f1;
+    color: #6366f1;
+}
+
+.page-link.active {
+    background: #6366f1;
+    border-color: #6366f1;
+    color: #ffffff;
+}
+
+.no-data {
+    text-align: center;
+    padding: 60px;
+    background: #ffffff;
+    border-radius: 12px;
+    color: #94a3b8;
+    border: 1px dashed #e2e8f0;
+}

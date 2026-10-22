@@ -1,0 +1,4 @@
+# Copy this file to application-local.properties, then enter your project account password.
+spring.datasource.url=jdbc:oracle:thin:@//localhost:1522/ORCLPDB1
+spring.datasource.username=GROUPWARE_BOOT
+spring.datasource.password=CHANGE_ME

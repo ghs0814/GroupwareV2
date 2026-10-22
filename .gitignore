@@ -1,0 +1,8 @@
+/target/
+/.idea/
+*.iml
+/config/application-local.properties
+/data/
+*.log
+.env
+/.tools/

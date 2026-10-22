@@ -1,0 +1,406 @@
+{
+  "date": "2026-10-22",
+  "timezone": "Asia/Seoul",
+  "java": "17.0.12",
+  "springBoot": "4.1.1",
+  "oracle": "19.3.0.0 / ORCLPDB1",
+  "testSuites": [
+    {
+      "name": "com.groupware.PasswordTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.groupware.WorkflowIntegrationTest",
+      "tests": "9",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    }
+  ],
+  "mainClassHttpChecks": [
+    {
+      "check": "anonymous main requires login",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "check": "reset deep link requires verification",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "check": "POST without CSRF token blocked",
+      "status": 403,
+      "passed": true
+    },
+    {
+      "check": "main.do",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "check": "main.jsp",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "check": "myPage.do",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "check": "myReservation.jsp",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "check": "myRental.jsp",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "check": "myLeave.jsp",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "check": "admin.do",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "check": "adminEqList.do",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "check": "officeMap.do",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "check": "officeMap.jsp",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "check": "reserve.do?roomId=401",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "check": "roomUpdate.do?roomId=401",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "check": "equipmentList.do",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "check": "rentForm.do?eqNo=1",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "check": "documentList.do?tab=equipment",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "check": "documentList.do?tab=leave",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "check": "rentalDetail.do?rentalNo=1",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "check": "leaveDetail.do?leaveNo=1",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "check": "boardList.do?type=1",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "check": "boardList.do?type=2",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "check": "boardList.do?type=3",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "check": "boardDetail.do?boardNo=1",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "check": "boardWrite.do?type=1",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "check": "boardWrite.do?type=2",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "check": "boardUpdate.do?boardNo=1",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "check": "addressBook.do",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "check": "changePw.do",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "check": "boardList.jsp?type=2",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "check": "css/main.css",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "check": "images/floor4_map2.png",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "check": "js/common.js",
+      "status": 200,
+      "passed": true
+    }
+  ],
+  "warHttpChecksPassed": 34,
+  "httpFlows": [
+    {
+      "check": "administrator login",
+      "passed": true
+    },
+    {
+      "check": "administrator pre-registers disposable fixture",
+      "passed": true
+    },
+    {
+      "check": "unregistered fixture lookup",
+      "passed": true
+    },
+    {
+      "check": "fixture account activation",
+      "passed": true
+    },
+    {
+      "check": "activated fixture logs in",
+      "passed": true
+    },
+    {
+      "check": "nonadministrator denied administrator page",
+      "passed": true
+    },
+    {
+      "check": "nonadministrator denied administrator POST",
+      "passed": true
+    },
+    {
+      "check": "nonadministrator cannot publish company news",
+      "passed": true
+    },
+    {
+      "check": "multipart board creation",
+      "passed": true
+    },
+    {
+      "check": "board content preserves Unicode",
+      "passed": true
+    },
+    {
+      "check": "download returns exact uploaded bytes",
+      "passed": true
+    },
+    {
+      "check": "other employee cannot overwrite board via POST",
+      "passed": true
+    },
+    {
+      "check": "state-changing GET requires session token",
+      "passed": true
+    },
+    {
+      "check": "comment posted and displayed",
+      "passed": true
+    },
+    {
+      "check": "board edit and attachment removal",
+      "passed": true
+    },
+    {
+      "check": "removed attachment returns not found",
+      "passed": true
+    },
+    {
+      "check": "board delete",
+      "passed": true
+    },
+    {
+      "check": "password-reset identity verification",
+      "passed": true
+    },
+    {
+      "check": "reset uses verified fixture despite forged employee parameter",
+      "passed": true
+    },
+    {
+      "check": "fixture logs in with reset password",
+      "passed": true
+    },
+    {
+      "check": "administrator password was not modified",
+      "passed": true
+    },
+    {
+      "check": "wrong current password is rejected",
+      "passed": true
+    },
+    {
+      "check": "verified fixture password change",
+      "passed": true
+    },
+    {
+      "check": "disposable fixture retirement",
+      "passed": true
+    },
+    {
+      "check": "retired fixture loses existing session",
+      "passed": true
+    }
+  ],
+  "unchangedAssets": [
+    {
+      "path": "css/addressBook.css",
+      "sha256": "98079da63a2a0f1cfa930cf9f4c6d8833cce91ce9ea3ca8a239de673d6f3224f"
+    },
+    {
+      "path": "css/admin.css",
+      "sha256": "6f98bf350f999b61f57e43231e978a3e0c767c8d0d707134c9b3a2646d16fdfc"
+    },
+    {
+      "path": "css/adminEqList.css",
+      "sha256": "44da926e95c6bb6ae2c92532598c780dd9431a61d6211e0dcabd01e894bfc3f8"
+    },
+    {
+      "path": "css/board.css",
+      "sha256": "47d43193e38edf47845500392d2f3b5be97ba6817424e6330f529917e0802bb5"
+    },
+    {
+      "path": "css/documentList.css",
+      "sha256": "9917595751e2dc3cb187fc3ea7ddc90a9d19e811568f6fbe23be5cddc93a70a6"
+    },
+    {
+      "path": "css/equipmentList.css",
+      "sha256": "a338e9b55f9e111501aa079e027ee69a5e38a5f37fddbd194b5ac0cc0aa31e4f"
+    },
+    {
+      "path": "css/findPw.css",
+      "sha256": "f87a693610495d115dd1b7128f4c7f235965a7ee45300dbad32a087eee4185d7"
+    },
+    {
+      "path": "css/header.css",
+      "sha256": "3b51e2d516949dc672949403c7bc99384a24aaa9478f200c77408be1ebf85a3a"
+    },
+    {
+      "path": "css/index.css",
+      "sha256": "f9ae4258d779f6baa49f61a512b08cb7c45d5d082f4ffaefba16a5211f7a1946"
+    },
+    {
+      "path": "css/join.css",
+      "sha256": "b45c30321494b7367b9030194be592158290dd1ea1241a59545cf7036f4ce5ee"
+    },
+    {
+      "path": "css/leaveDetail.css",
+      "sha256": "70cecba0f8942ce9adc3dc77c28704c7dce2d2ff8502b0a8e819088b20083aee"
+    },
+    {
+      "path": "css/leaveForm.css",
+      "sha256": "3d735cdfc47c969ec106d6296392dfdad9d5bdbd1a606d5a3b240487231b74a7"
+    },
+    {
+      "path": "css/main.css",
+      "sha256": "fc57ebfa70532ad9bdd2c2735df32b74a4c35414cf1bb4eee73f8be08f198410"
+    },
+    {
+      "path": "css/myPage.css",
+      "sha256": "7d6fcf5138b67c157b973e09a8eaf4b9d99c3ed84a15a50208874f896ed5a7d3"
+    },
+    {
+      "path": "css/officeMap.css",
+      "sha256": "506f3854da1da692c4c859e65335406129d9ff49ed4e30f756baebb48e2414de"
+    },
+    {
+      "path": "css/rentalDetail.css",
+      "sha256": "c613c926ef8941ca1f0782a148a8f30dd95bca9bf8059fc8aca5d674db7310dd"
+    },
+    {
+      "path": "css/rentForm.css",
+      "sha256": "3c2e057aca85bbb8425a7d786b3c450ce3c7e0e8e295c5e4078b07782a9c33fb"
+    },
+    {
+      "path": "css/reserve.css",
+      "sha256": "4284045d55633d5baaff5596b0e71e7f367a87e03c9e215323cacc1f5bbd1d9f"
+    },
+    {
+      "path": "css/roomUpdate.css",
+      "sha256": "c47249ae6fa80ee849210961127be76bd65c6821088293457f46da1cd419595a"
+    },
+    {
+      "path": "images/floor1_map.png",
+      "sha256": "7d9499fe0c6b9f740667db38ac1f5b4455f7abd97ece19288f573596648e509c"
+    },
+    {
+      "path": "images/floor2_map.png",
+      "sha256": "1a20d1f27a81b481c280439e41cc5ef23548ba2737111da8f9330abc81763842"
+    },
+    {
+      "path": "images/floor3_map.png",
+      "sha256": "7f78f17024ec1afc6dadab5e293d23b322d036e7abb0150f14ab53076897970e"
+    },
+    {
+      "path": "images/floor4_map.png",
+      "sha256": "f758b70e0341d2c34eb6bdad781b1ad812646a382a75b2fdf6ad6f6fc786a6be"
+    },
+    {
+      "path": "images/floor4_map2.png",
+      "sha256": "3a7d4121c21b4f121da53dd8a1c1b91b005a5a1f74b35f760054453b75fcaf79"
+    },
+    {
+      "path": "images/floor5_map.png",
+      "sha256": "09e4296d58c4026ace3c167b9881bae5357b96af044c5ebb7b79a07abc0c5141"
+    },
+    {
+      "path": "images/floor5_map2.png",
+      "sha256": "86a8ae9d9533e194c12e92d04683ff90cc715eaa819a728636bc10ebc66691e9"
+    }
+  ],
+  "existingSchemaGuard": "passed",
+  "intellijButtonAutomated": false
+}

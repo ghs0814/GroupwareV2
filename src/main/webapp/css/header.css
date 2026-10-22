@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+/* ==========================================
+   [1. 기본 리셋 및 전역 스타일]
+   ========================================== */
+html {
+    /* 스크롤바를 강제로 항상 표시함 */
+    overflow-y: scroll;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 전체 배경 및 폰트 설정 */
+body {
+    font-family: 'Pretendard', sans-serif;
+    background-color: #f4f7fa;
+    margin: 0; padding: 0;
+    color: #334155;
+    min-width: 1400px; /* 브라우저 축소 시 최소 해상도 방어선 */
+}
+
+/* ==========================================
+   [2. 헤더 스타일 - 상단 100% 고정]
+   ========================================== */
+.header {
+    background-color: #0f172a;
+    height: 65px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    position: sticky; top: 0; z-index: 1000;
+    min-width: 1400px;
+}
+
+.header-inner {
+    max-width: 1400px;
+    margin: 0 auto; height: 100%;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 20px;
+}
+
+/* 로고 스타일 (원본 재현) */
+.logo-area { text-decoration: none; display: flex; align-items: center; font-size: 24px; }
+.logo-group { color: #ffffff; font-weight: 800; }
+.logo-ware { color: #e2b857; font-weight: 300; margin-left: 1px; }
+
+/* 네비게이션 영역 */
+.nav-buttons { display: flex; align-items: center; gap: 8px; }
+.user-profile-info { margin-right: 15px; font-size: 14px; color: #94a3b8; }
+
+/* 관리자 뱃지 */
+.admin-tag {
+    background: rgba(226, 184, 87, 0.15);
+    color: #e2b857;
+    border: 1px solid #e2b857;
+    padding: 2px 8px; border-radius: 4px;
+    font-size: 11px; font-weight: 800; margin-right: 6px;
+}
+
+/* 공통 버튼 스타일 */
+.nav-btn {
+    padding: 8px 14px; color: #cbd5e1; text-decoration: none;
+    border-radius: 6px; font-weight: 600; font-size: 13px; transition: 0.3s;
+}
+.nav-btn:hover { color: #ffffff; background: rgba(255,255,255,0.08); }
+
+/* ★ 관리자 전용 메뉴 특별 스타일 (골드 보더 + 발광 효과) */
+.nav-btn.admin-special {
+    color: #e2b857 !important;
+    border: 1px solid rgba(226, 184, 87, 0.5);
+    background: rgba(226, 184, 87, 0.05);
+}
+.nav-btn.admin-special:hover {
+    background: rgba(226, 184, 87, 0.2);
+    box-shadow: 0 0 10px rgba(226, 184, 87, 0.3);
+}
+
+.nav-btn.logout { background: #be123c; color: #fff !important; margin-left: 10px; }
+.nav-btn.logout:hover { background: #e11d48; }

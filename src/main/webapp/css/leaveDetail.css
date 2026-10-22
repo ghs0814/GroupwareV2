@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+/* ==========================================
+   1. 컨테이너 및 전체 레이아웃
+   ========================================== */
+body {
+    font-family: 'Pretendard', sans-serif;
+    background-color: #f4f7fa;
+    margin: 0; padding: 0;
+    color: #334155;
+    min-width: 1200px !important; 
+}
+
+.detail-container { 
+    width: 850px; 
+    margin: calc(65px + 1.2vmax) auto 40px auto !important; 
+    padding: 35px; 
+    background: #ffffff; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06); 
+    box-sizing: border-box !important;
+}
+
+.header-area { 
+    display: flex; justify-content: space-between; align-items: flex-end; 
+    margin-bottom: 25px; border-bottom: 2px solid #6366f1; padding-bottom: 15px; 
+}
+.header-area h2 { font-size: 26px; font-weight: 800; color: #1e293b; margin: 0; }
+
+/* ==========================================
+   2. 5단계 결재선 디자인
+   ========================================== */
+.approval-table { 
+    display: flex; justify-content: flex-end; gap: 12px; margin-bottom: 35px; border: none; width: 100%;
+}
+.stamp-box { 
+    display: flex !important; flex-direction: column !important; width: 100px !important; 
+    min-width: 100px !important; border: 1px solid #cbd5e1 !important; 
+    text-align: center !important; border-radius: 6px !important; background: #ffffff !important; 
+    overflow: hidden !important;
+}
+.stamp-step { 
+    background: #f1f5f9 !important; padding: 6px 0 !important; font-size: 12px !important; 
+    font-weight: 700 !important; color: #475569 !important; border-bottom: 1px solid #cbd5e1 !important; 
+}
+.stamp-name { 
+    padding: 18px 0 !important; font-size: 14px !important; font-weight: 800 !important; 
+    color: #0f172a !important; min-height: 22px !important; text-align: center !important; 
+}
+.stamp-name::after { content: '(印)'; font-size: 11px; color: #ef4444; margin-left: 3px; }
+.stamp-date { font-size: 11px; color: #666; margin-top: 2px; display: block; padding-bottom: 5px; }
+
+/* ==========================================
+   3. 문서 상세 정보 테이블
+   ========================================== */
+.info-table { 
+    width: 100% !important; border-collapse: collapse !important; 
+    margin-bottom: 35px !important; table-layout: fixed !important; 
+}
+.info-table th { 
+    background: #f8fafc !important; padding: 14px !important; border: 1px solid #e2e8f0 !important; 
+    text-align: left !important; color: #334155 !important; font-weight: 700 !important; width: 20% !important;
+}
+.info-table td { 
+    padding: 14px !important; border: 1px solid #e2e8f0 !important; 
+    color: #475569 !important; font-size: 14px !important; word-break: break-all !important; 
+    width: 30% !important;
+}
+.reason-cell { width: auto !important; height: 150px; vertical-align: top; }
+
+/* ==========================================
+   4. 상태 배지 및 버튼 영역
+   ========================================== */
+.status-badge { 
+    padding: 6px 14px !important; border-radius: 20px !important; font-size: 13px !important; 
+    font-weight: 800 !important; box-shadow: 0 1px 2px rgba(0,0,0,0.05) !important; 
+}
+.status-blue { background: #e0e7ff !important; color: #4338ca !important; border: 1px solid #c7d2fe !important; }
+.status-red { background: #fee2e2 !important; color: #b91c1c !important; border: 1px solid #fecaca !important; }
+
+.btn-group { 
+    text-align: center; border-top: 1px solid #e2e8f0; padding-top: 25px; margin-top: 20px;
+}
+.btn-group button {
+    padding: 12px 28px;
+    font-size: 15px;
+    font-weight: 700;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin: 0 5px; 
+    display: inline-block;
+}
+.btn-list { background-color: #6366f1; color: white; }
+.btn-list:hover { background-color: #4f46e5; }
+.btn-approve { background-color: #10b981; color: white; }
+.btn-approve:hover { background-color: #059669; }
+.btn-reject { background-color: #ef4444; color: white; }
+.btn-reject:hover { background-color: #dc2626; }

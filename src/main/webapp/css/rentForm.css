@@ -1,0 +1,231 @@
+@charset "UTF-8";
+
+/* ==========================================
+   1. 기본 폰트 및 배경 설정 (전체 시스템 최소 가로폭 1200px 철벽 동기화)
+   ========================================== */
+body {
+    font-family: 'Pretendard', sans-serif;
+    background-color: #f4f7fa; /* 대시보드 공통 배경색 일치 */
+    margin: 0; padding: 0;
+    color: #334155;
+    
+    /* 💡 [창 조절 방어 1순위]: 다른 화면들과 동일하게 1200px 락을 걸어 
+          창을 극단적으로 줄여도 전체 레이아웃 균형을 깨뜨리지 않고 가로 스크롤바를 공유합니다. */
+    min-width: 1200px !important; 
+    overflow-x: auto !important;
+}
+
+/* ==========================================
+   2. 상단 네비게이션 헤더바 스킨 동기화 (대시보드 메인 완전 일치)
+   ========================================== */
+/* .header {
+    background-color: #0f172a; 다크 네이비
+    height: 65px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    position: fixed !important; 
+    top: 0 !important; 
+    left: 0 !important;
+    z-index: 1000 !important; 최상단 레이어 위치 고정
+    width: 100% !important;
+    min-width: 1200px !important; 
+    box-sizing: border-box !important;
+} */
+
+/* .header-inner {
+    max-width: 1200px;
+    width: 100% !important;
+    min-width: 1200px !important; 
+    margin: 0 auto !important; 
+    height: 100% !important;
+    display: flex !important; 
+    justify-content: space-between !important; 
+    align-items: center !important;
+    padding: 0 20px !important;
+    box-sizing: border-box !important;
+} */
+
+/* 네비바 알맹이 찌부 방지 락 */
+/* .logo-area { text-decoration: none; display: flex; align-items: center; font-size: 24px; flex-shrink: 0 !important; }
+.logo-group { color: #ffffff; font-weight: 800; }
+.logo-ware { color: #e2b857; font-weight: 300; margin-left: 1px; }
+.nav-buttons { display: flex !important; align-items: center !important; gap: 6px !important; flex-wrap: nowrap !important; flex-shrink: 0 !important; }
+.user-profile-info { margin-right: 10px; font-size: 14px; color: #94a3b8; flex-shrink: 0 !important; }
+.admin-tag { background: rgba(226, 184, 87, 0.15); color: #e2b857; border: 1px solid #e2b857; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 800; margin-right: 4px; flex-shrink: 0 !important; }
+.nav-btn { padding: 8px 12px !important; color: #cbd5e1; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 13px; transition: 0.3s; white-space: nowrap !important; flex-shrink: 0 !important; }
+.nav-btn:hover { color: #ffffff; background: rgba(255,255,255,0.08); }
+.nav-btn.admin-special { color: #e2b857 !important; border: 1px solid rgba(226, 184, 87, 0.5) !important; background: rgba(226, 184, 87, 0.05) !important; }
+.nav-btn.admin-special:hover { background: rgba(226, 184, 87, 0.2) !important; box-shadow: 0 0 10px rgba(226, 184, 87, 0.3) !important; }
+.nav-btn.logout { background: #be123c; color: #fff !important; margin-left: 6px; }
+.nav-btn.logout:hover { background: #e11d48; } */
+
+/* ==========================================
+   3. 입력 폼 프레임 구조 (모던 인디고 무드로 볼륨감 업그레이드)
+   ========================================== */
+.form-container {
+    max-width: 650px;
+    
+    /* 💡 [상단 헤더 고정 방어 마진]: 고정형 헤더바(65px)에 가려져 
+          입력 페이지 제목(h2)이 파묻히는 현상을 마진값 조율로 완벽 격리합니다. */
+    margin: 40px auto 60px auto !important; 
+    
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box !important;
+}
+
+h2 {
+    text-align: center;
+    color: #1e293b;
+    font-size: 24px;
+    font-weight: 800;
+    margin-top: 0;
+    margin-bottom: 35px;
+    border-bottom: 2px solid #6366f1; /* 메인 시그니처 인디고 블루 언더라인 */
+    padding-bottom: 15px;
+}
+
+/* 비품 마스터 정보 간이 테이블 스킨 디자인 */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+.info-table th, .info-table td {
+    padding: 14px 16px;
+    border: 1px solid #e2e8f0;
+    font-size: 14px;
+}
+.info-table th {
+    background-color: #f8fafc;
+    color: #475569;
+    font-weight: 700;
+    width: 30%;
+    text-align: left;
+}
+.info-table td {
+    color: #334155;
+}
+
+/* 비품 잔여 수량 스펙 강조 제어 */
+.remain-count {
+    color: #0ea5e9;       /* 잔여 재고 메인 하늘색 스펙 동기화 */
+    font-weight: 700;    
+}
+.total-count {
+    color: #64748b;       
+    font-weight: 500;  
+}
+.text-danger {
+    color: #ef4444 !important; /* 품절 임박 경고 소프트 레드 */
+    font-weight: 700;
+}
+
+/* ==========================================
+   4. 입력 컨트롤 컴포넌트 고도화
+   ========================================== */
+.form-group {
+    margin-bottom: 24px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    color: #334155;
+}
+.form-control {
+    width: 100%;
+    height: 44px;
+    padding: 0 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #334155;
+    background-color: #ffffff;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+}
+/* 대화형 포커스 하이라이팅 피드백 */
+.form-control:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+/* 📌 날짜 선택 상자 및 달력 브라우저 영역 손가락 커서 강제 */
+input[type="date"].form-control {
+    cursor: pointer;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+}
+
+/* 📌 대여 사유 입력창 크기조절 완전 봉인 및 패딩 정렬 */
+textarea.form-control {
+    height: 120px !important;
+    padding: 12px 14px !important;
+    resize: none !important; 
+    font-family: inherit;
+}
+
+/* ==========================================
+   5. 하단 제어 조작 버튼 세트 스타일
+   ========================================== */
+.btn-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 35px;
+}
+.btn {
+    flex: 1;
+    padding: 12px 0;
+    font-size: 15px;
+    font-weight: 700;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+/* 기안서 작성 제출 버튼 (인디고 테마) */
+.btn-submit {
+    background-color: #6366f1;
+    color: white;
+}
+.btn-submit:hover {
+    background-color: #4f46e5;
+}
+.btn-submit:disabled {
+    background-color: #cbd5e1;
+    color: #94a3b8;
+    cursor: not-allowed;
+}
+
+/* 취소 및 이전 버튼 (세련된 그레이 슬레이트 톤 변경) */
+.btn-cancel {
+    background-color: #64748b;
+    color: white;
+}
+.btn-cancel:hover {
+    background-color: #475569;
+}
+
+/* 유효성 오류 경고 박스 */
+.error-box {
+    background-color: #fee2e2;
+    color: #dc2626;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    border: 1px solid #fecaca;
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+}

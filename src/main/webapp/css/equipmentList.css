@@ -1,0 +1,241 @@
+@charset "UTF-8";
+
+/* ==========================================
+   1. 실시간 고정형 검색 바 (Search Bar) 디자인 
+   ========================================== */
+.search-bar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    
+    /* 📌 고정 위치 정밀 계산: 헤더 높이가 65px이므로 top 조절 */
+    position: sticky;
+    top: 65px;                
+    z-index: 900;             /* 헤더(1000)보다는 아래, 테이블보다는 위에 위치 */
+    background-color: #f4f7fa;/* 바디 배경색과 일치시켜 스크롤 시 이질감 제거 */
+}
+
+.search-form {
+    display: flex;
+    gap: 10px;
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    align-items: center;
+}
+
+.search-select {
+    width: 130px;
+    min-width: 130px;
+    height: 42px;
+    padding: 0 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #475569;
+    outline: none;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.search-input {
+    flex-grow: 1;
+    min-width: 300px;
+    height: 42px;
+    padding: 0 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s;
+}
+.search-input:focus {
+    border-color: #6366f1; /* 포커스 시 테두리 색상을 인디고 블루로 변경 */
+}
+
+.btn-search {
+    width: 100px;
+    min-width: 100px;
+    height: 42px;
+    background-color: #6366f1; /* 메인 테마 인디고 블루 적용 */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.2s;
+}
+.btn-search:hover {
+    background-color: #4f46e5;
+}
+
+/* ==========================================
+   2. 비품 목록 테이블 디자인 영역 (대시보드 통일)
+   ========================================== */
+.table-container {
+    max-width: 1200px;
+    margin: 0 auto 50px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.eq-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.eq-table th {
+    background: #f8fafc;
+    padding: 16px;
+    color: #475569;
+    font-size: 14px;
+    font-weight: 700;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.eq-table td {
+    padding: 16px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #334155;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+/* 마우스 호버 시 피드백 제공 */
+.eq-row:hover {
+    background-color: #f8fafc;
+}
+
+.eq-name {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* 수량 컬러강조 최적화 (main.css 스타일 적용) */
+.eq-count b {
+    color: #0ea5e9; /* 잔여 수량 메인 하늘색 강조 */
+    font-size: 15px;
+}
+.text-danger b {
+    color: #ef4444 !important; /* 품절/소진 임박 시 소프트한 레드 강조 */
+}
+
+/* 대여버튼이 배치되는 마지막 열 너비 세팅 */
+.eq-table td:last-child {
+    width: 130px;
+    min-width: 130px;
+}
+
+/* ==========================================
+   3. 대여 신청 / 재고 소진 버튼 스타일
+   ========================================== */
+.btn-rent {
+    width: 100px;
+    padding: 8px 0;
+    background-color: #6366f1; /* 메인 테마 블루 */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.2s;
+    text-align: center;
+}
+.btn-rent:hover {
+    background-color: #4f46e5;
+}
+
+.btn-disabled {
+    width: 100px;
+    padding: 8px 0;
+    background-color: #f1f5f9;
+    color: #94a3b8;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: not-allowed;
+    white-space: nowrap;
+    text-align: center;
+}
+
+/* ==========================================
+   4. 검색 결과 텍스트 마킹 효과 (애니메이션 최적화)
+   ========================================== */
+.mark-highlight {
+    background-color: #fef08a; /* 눈이 편안한 파스텔톤 노란색 */
+    color: #000000;
+    font-weight: bold;
+    padding: 2px 4px;
+    border-radius: 4px;
+    box-shadow: 0 0 4px rgba(234, 179, 8, 0.4);
+    display: inline-block;
+    animation: pulse 0.8s infinite alternate;
+}
+
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.04); }
+}
+
+/* ==========================================
+   5. 페이징 네비게이션 스타일 
+   ========================================== */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 50px;
+}
+
+.pagination {
+    display: flex;
+    gap: 5px;
+}
+
+.page-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 36px;
+    padding: 0 10px;
+    border-radius: 8px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    color: #475569;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.page-link:hover {
+    border-color: #6366f1;
+    color: #6366f1;
+    background-color: #f8fafc;
+}
+
+.page-link.active {
+    background-color: #6366f1;
+    color: #ffffff;
+    border-color: #6366f1;
+    cursor: default;
+}
+
+.page-link.active:hover {
+    background-color: #6366f1;
+    color: #ffffff;
+}

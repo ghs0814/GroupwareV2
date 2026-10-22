@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+/* 로그인 배경 색*/
+body {
+    margin: 0; padding: 0;
+    background-color: #f1f3f5;
+    font-family: 'Pretendard', sans-serif;
+    display: flex; justify-content: center; align-items: center;
+    height: 100vh;
+}
+
+/* [수정] 카드 모서리 곡률 제거 (0px) */
+.join-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 420px;
+    padding: 50px 40px;
+    border-radius: 0; /* 사각형으로 변경 */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    border-top: 5px solid #0f172a; /* 상단 포인트 라인 (선택사항) */
+}
+
+.brand-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+.brand-logo { font-size: 32px; margin-bottom: 5px; }
+.brand-logo .bold { color: #0f172a; font-weight: 800; }
+.brand-logo .thin { color: #e2b857; font-weight: 300; }
+.subtitle { color: #64748b; font-size: 14px; font-weight: 600; }
+
+.field-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #475569;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.input-group { display: flex; gap: 8px; margin-bottom: 18px; }
+
+/* [수정] 입력창 모서리 곡률 제거 (0px) */
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #ced4da;
+    border-radius: 0; /* 사각형으로 변경 */
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #0f172a; /* 포커스 시 다크 네이비로 강조 */
+}
+
+/* [수정] 정보 확인 버튼 모서리 곡률 제거 (0px) */
+.btn-check {
+    width: 100px;
+    background: #343a40;
+    color: #ffffff;
+    border: none;
+    border-radius: 0; /* 사각형으로 변경 */
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+/* [수정] 읽기 전용 필드 모서리 곡률 제거 (0px) */
+.readonly-field {
+    background-color: #e9ecef !important;
+    color: #495057 !important;
+    border-radius: 0; /* 사각형으로 변경 */
+    cursor: not-allowed;
+    margin-bottom: 18px;
+}
+
+.button-area {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* [수정] 하단 메인 버튼들 모서리 곡률 제거 (0px) */
+.btn-main {
+    flex: 1;
+    padding: 16px;
+    border: none;
+    border-radius: 0; /* 사각형으로 변경 */
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-cancel { background: #dee2e6; color: #495057; }
+.btn-register { background: #0f172a; color: #ffffff; }
+
+.btn-main:hover { opacity: 0.9; }
