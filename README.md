@@ -17,15 +17,7 @@
 | 주소록 | 사원 연락처 조회 |
 | 관리자 | 사원 정보·부서·직급 관리, 관리자 권한 설정, 퇴사 처리, 회의실·비품 관리 |
 
-## 화면
 
-### 대시보드
-
-![대시보드](docs/screenshots/dashboard.png)
-
-### 회의실 예약
-
-![회의실 평면도](docs/screenshots/office-map.png)
 
 ## 기술 스택
 
@@ -130,8 +122,3 @@ $env:RUN_ORACLE_TESTS="true"
 .\mvnw.cmd verify
 ```
 
-## 관련 문서
-
-- [상세 실행 안내](docs/RUN_GUIDE.md)
-- [구조 변경 및 개선 내역](docs/MIGRATION.md)
-- [테스트 항목 및 검증 기록](docs/VERIFICATION.md)
